@@ -33,8 +33,13 @@ const Sleep = (ms: number) => {
     // get the 0 index record
     const log_contract_address_0 = await checkin.getLogAddress(0n);
     let log_0 = client4.open(Log.fromAddress(log_contract_address_0));
-    const record_0 = await log_0.getRecord();
-    console.log("record_0:", record_0);
+
+    try {
+        const record_0 = await log_0.getRecord();
+        console.log("record_0:", record_0);
+    } catch (error) {
+        console.error("Failed to get record_0");
+    }
 
 
 })();

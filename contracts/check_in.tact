@@ -76,7 +76,6 @@ contract VerifyCheck {
             to: log_address,
             body: Record { count: self.count, address: self.user, at: at}.toCell(),
             value: myBalance() - ton("0.02"),
-            // mode: SendRemainingValue,
             code: init.code,      
             data: init.data
         });
@@ -110,15 +109,9 @@ contract Log {
         self.record.at = now();
 
         send(SendParameters{
-            to: self.master,
-            value: ton("0.008"),
-            body: "increase".asComment(),
-        });
-
-        send(SendParameters{
             to: msg.address,
             bounce: true,
-            value: context().value - ton("0.03"),
+            value: context().value - ton("0.02"),
         });
     }
 
@@ -152,9 +145,6 @@ contract CheckIn with Deployable, OwnableTransferable {
             code: init.code,      
             data: init.data
         });
-    }
-
-    receive("increase") {
         self.seqno = self.seqno + 1;
     }
 

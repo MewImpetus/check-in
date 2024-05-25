@@ -63,12 +63,6 @@ describe('CheckIn', () => {
 
         const log_address = await checkIn.getLogAddress(0n);
 
-        expect(checkinResult.transactions).toHaveTransaction({
-            from: log_address,
-            to: checkIn.address,
-            success: true,
-        });
-
         const index_after = await checkIn.getCurrentIndex();
         expect(index_after).toEqual(1n)
 
@@ -132,11 +126,17 @@ describe('CheckIn', () => {
 
         const index_after3 = await checkIn.getCurrentIndex();
         console.log(index_after3)
-        expect(index_after3).toEqual(2n)
+        expect(index_after3).toEqual(3n)
 
         const user_info3 = await user.getCheckInfo();
-        console.log("user_info3:", user_info3)
 
         expect(user_info2).toEqual(user_info3)
+
+        const log_address_2 = await checkIn.getLogAddress(2n);
+
+        const log_2 = blockchain.openContract(Log.fromAddress(log_address_2));
+
+        expect(log_2.init).toEqual(undefined)
+        
     });
 });
