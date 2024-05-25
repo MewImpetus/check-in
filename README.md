@@ -1,26 +1,24 @@
 # checkin
 
-## Project structure
-
--   `contracts` - source code of all the smart contracts of the project and their dependencies.
--   `wrappers` - wrapper classes (implementing `Contract` from ton-core) for the contracts, including any [de]serialization primitives and compilation functions.
--   `tests` - tests for the contracts.
--   `scripts` - scripts used by the project, mainly the deployment scripts.
-
 ## How to use
 
-### Build
+### 1. Build
 
-`npx blueprint build` or `yarn blueprint build`
+`npm run build`
 
-### Test
+### 2. Test
 
-`npx blueprint test` or `yarn blueprint test`
+`npm run test`
 
-### Deploy or run another script
+### 3. Deploy
 
-`npx blueprint run` or `yarn blueprint run`
+`npm run start`  and choose the deployCheckIn.ts
 
-### Add a new contract
+### 4. check in example
+`npm run start`  and choose the check_in.ts
 
-`npx blueprint create ContractName` or `yarn blueprint create ContractName`
+### 5. get the checkin log example
+[read_example](./scripts/read_example.ts)
+
+run: 
+`ts-node ./scripts/read_example.ts`
