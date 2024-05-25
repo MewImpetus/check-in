@@ -20,7 +20,7 @@ const Sleep = (ms: number) => {
 
 
 
-    const checkin_contract_address = "0QBYqEFGYJjf83eimeNfU4ojLbYd8MxNjFuBKdaAuXy2RQ_N"
+    const checkin_contract_address = "0QB2mjRa7F6OifAAaiSyVO3x92ZSomoHgNqrXNYeETiMCzh1"
 
     let contract = CheckIn.fromAddress(Address.parse(checkin_contract_address));
     let checkin = client4.open(contract);

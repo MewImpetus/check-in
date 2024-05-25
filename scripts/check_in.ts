@@ -4,7 +4,7 @@ import { NetworkProvider } from '@ton/blueprint';
 
 export async function run(provider: NetworkProvider) {
 
-    const checkin_contract_address = "0QBYqEFGYJjf83eimeNfU4ojLbYd8MxNjFuBKdaAuXy2RQ_N"
+    const checkin_contract_address = "0QB2mjRa7F6OifAAaiSyVO3x92ZSomoHgNqrXNYeETiMCzh1"
     const checkIn = provider.open(CheckIn.fromAddress(Address.parse(checkin_contract_address)))
 
     // run methods on `checkIn`

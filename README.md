@@ -15,11 +15,17 @@
 ### 3. Deploy
 
 `npm run start`  and choose the deployCheckIn.ts
-testnet address： `0QBYqEFGYJjf83eimeNfU4ojLbYd8MxNjFuBKdaAuXy2RQ_N`
+
+testnet address： `0QB2mjRa7F6OifAAaiSyVO3x92ZSomoHgNqrXNYeETiMCzh1`
 
 ### 4. check in example
 `npm run start`  and choose the check_in.ts
-![message process](image.png)
+
+check in Success
+![success](image.png)
+
+check in Failed
+![Failed](image-1.png)
 
 ### 5. get the checkin log example
 [read_example](./scripts/read_example.ts)
