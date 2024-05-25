@@ -16,6 +16,7 @@
 
 ### 4. check in example
 `npm run start`  and choose the check_in.ts
+![message process](image.png)
 
 ### 5. get the checkin log example
 [read_example](./scripts/read_example.ts)
