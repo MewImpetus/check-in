@@ -16,7 +16,7 @@
 
 `npm run start`  and choose the deployCheckIn.ts
 
-testnet address： `0QB2mjRa7F6OifAAaiSyVO3x92ZSomoHgNqrXNYeETiMCzh1`
+testnet address： `0QB_pBBnqnRr-h4pv8DwsA2GG0hzuFObrrOMqOqBBgZ1bssz`
 
 ### 4. check in example
 `npm run start`  and choose the check_in.ts

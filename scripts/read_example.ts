@@ -25,21 +25,7 @@ const Sleep = (ms: number) => {
     let contract = CheckIn.fromAddress(Address.parse(checkin_contract_address));
     let checkin = client4.open(contract);
 
-    // get the log index
-    let current_index = await checkin.getCurrentIndex();
-    console.log("current_index:", current_index)
-
-    // history is 0 to current_index-1
-    // get the 0 index record
-    const log_contract_address_0 = await checkin.getLogAddress(0n);
-    let log_0 = client4.open(Log.fromAddress(log_contract_address_0));
-
-    try {
-        const record_0 = await log_0.getRecord();
-        console.log("record_0:", record_0);
-    } catch (error) {
-        console.error("Failed to get record_0");
-    }
+    // ... 参考测试中的调用即可
 
 
 })();
