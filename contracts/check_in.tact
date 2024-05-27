@@ -35,20 +35,24 @@ contract VerifyCheck {
     receive("InterCheckIn") {
         require(sender() == self.master, "Master only");
         let _now: Int = now();
-        require(_now - self.today_count_update >= self.delta || self.today_count < self.day_limit, "Exceeded daily limit.");
+        // require(_now - self.today_count_update >= self.delta || self.today_count < self.day_limit, "Exceeded daily limit.");
         if(_now - self.today_count_update >= self.delta) {
             self.today_count = 1;
             self.today_count_update = _now;
+            self.count = self.count + 1;
+            emit(CheckInEvent{count: self.count, address: self.user, at: _now}.toCell());
         } else if(self.today_count < self.day_limit) {
             self.today_count = self.today_count + 1;
+            self.count = self.count + 1;
+            emit(CheckInEvent{count: self.count, address: self.user, at: _now}.toCell());
         }
-        self.count = self.count + 1;
+       
         send(SendParameters{
             to: self.user,
             value: myBalance()- ton("0.015"),
             mode: SendIgnoreErrors
         });
-        emit(CheckInEvent{count: self.count, address: self.user, at: _now}.toCell());
+        
     }
 
     get fun check_info(): UserCountInfo {
