@@ -70,6 +70,10 @@ contract CheckIn with Deployable, OwnableTransferable {
         self.owner = sender();
     }
 
+    receive() {
+        require(myBalance() <= ton("0.1"), "Balance getting too high");
+    }
+
     receive("check in") {
         let init: StateInit = self.caculate_verify_init(sender());
         send(SendParameters{
